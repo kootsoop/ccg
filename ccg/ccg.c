@@ -64,8 +64,8 @@ WARNING: THERE IS NO GUARANTEE OR WARRANTY WITH THIS CODE.
 #define  TIMEDEF        1	/* Time resolution default */
 #define  LWINDDEF       0.25	/* Window Length default (fraction) */
 #define  PI             3.141592653589796
-#define  MAXLWIND       1024	/* Maximum Window Length */
-#define  MAXLWINDV2     513	/* Maximum Window Length /2 + 1 */
+#define  MAXLWIND       128	/* Maximum Window Length */
+#define  MAXLWINDV2     65	/* Maximum Window Length /2 + 1 */
 #define  CROSSTERMN     1024	/* Default Crossterm signal length */
 #define  NMAX           1024	/* Maximum signal length */
 #define  FORWARD        -1.0	/* Value of sw for forward FFT */
@@ -114,6 +114,7 @@ main (argc, argv)
             Riha,
             Page,
             median;
+
     extern int
             hann,		/* Window type flags */
             hamm,
@@ -169,8 +170,6 @@ main (argc, argv)
             PrintUsage();
     int     Rad2 ();
 
-
-    printf("HELLO!\n");
 
     if (argc==1)
       PrintUsage();
@@ -415,6 +414,7 @@ main (argc, argv)
 /* Limit window length to ODD(N) */
     if (lwind > N)
 	lwind = 2 * (double) (N / 2.0) - 1;
+
 /* select default time resolution */
     if (timeres <= 0)
 	timeres = TIMEDEF;
