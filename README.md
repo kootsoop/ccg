@@ -49,3 +49,4 @@ fs
 followed by `N` signal samples.  Here, `1` indicates the file type, `N` is the number of samples following the header (one per line), and `fs` is the sampling frequency.
 
 ![Example output](./ccg/example_plot_three_wvds.png?raw=true "Example output")
+
